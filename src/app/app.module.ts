@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { SmallCarouselComponent } from './components/small-carousel/small-carousel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    HeroCarouselComponent
+    HeroCarouselComponent,
+    SmallCarouselComponent
   ],
   imports: [
     BrowserModule,
