@@ -13,8 +13,8 @@ import { TestCarouselComponent } from './test-carousel/test-carousel.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
