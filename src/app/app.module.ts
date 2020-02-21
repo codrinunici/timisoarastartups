@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { SmallCarouselComponent } from './components/small-carousel/small-carousel.component';
+import { SubscribeJumboComponent } from './components/subscribe-jumbo/subscribe-jumbo.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SmallCarouselComponent } from './components/small-carousel/small-carous
     AppComponent,
     TopNavComponent,
     HeroCarouselComponent,
-    SmallCarouselComponent
+    SmallCarouselComponent,
+    SubscribeJumboComponent
   ],
   imports: [
     BrowserModule,
