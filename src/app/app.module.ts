@@ -7,6 +7,8 @@ import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { SmallCarouselComponent } from './components/small-carousel/small-carousel.component';
 import { SubscribeJumboComponent } from './components/subscribe-jumbo/subscribe-jumbo.component';
+import { TestimonialsPanelComponent } from './components/testimonials-panel/testimonials-panel.component';
+import { GroupJoinPanelComponent } from './components/group-join-panel/group-join-panel.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { SubscribeJumboComponent } from './components/subscribe-jumbo/subscribe-
     TopNavComponent,
     HeroCarouselComponent,
     SmallCarouselComponent,
-    SubscribeJumboComponent
+    SubscribeJumboComponent,
+    TestimonialsPanelComponent,
+    GroupJoinPanelComponent
   ],
   imports: [
     BrowserModule,
