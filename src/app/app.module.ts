@@ -9,6 +9,7 @@ import { SmallCarouselComponent } from './components/small-carousel/small-carous
 import { SubscribeJumboComponent } from './components/subscribe-jumbo/subscribe-jumbo.component';
 import { TestimonialsPanelComponent } from './components/testimonials-panel/testimonials-panel.component';
 import { GroupJoinPanelComponent } from './components/group-join-panel/group-join-panel.component';
+import { TextSloganPanelComponent } from './components/text-slogan-panel/text-slogan-panel.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { GroupJoinPanelComponent } from './components/group-join-panel/group-joi
     SmallCarouselComponent,
     SubscribeJumboComponent,
     TestimonialsPanelComponent,
-    GroupJoinPanelComponent
+    GroupJoinPanelComponent,
+    TextSloganPanelComponent
   ],
   imports: [
     BrowserModule,
