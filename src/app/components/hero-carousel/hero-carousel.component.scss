@@ -1,7 +1,10 @@
 :host {
   ngb-carousel.hero-carousel::ng-deep {
     .carousel-item {
-      max-height: 910px;
+      height: calc(100vh - 50px);
+      > .carousel-caption {
+        background: rgba(0, 0, 0, 0.4);
+      }
     }
   }
 }
