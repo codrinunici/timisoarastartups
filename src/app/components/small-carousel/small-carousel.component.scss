@@ -3,17 +3,18 @@
     .carousel-item.active {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-evenly;
+      justify-content: space-around;
       > .carousel-caption {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        align-items: center;
         width: 100%;
         left: 0;
         > div {
           max-width: 350px;
           max-height: 200px;
-          background: rgba(0, 0, 0, 0.4);
+          background-color: rgba(44, 62, 80, 0.4);
           cursor: pointer;
         }
       }
@@ -21,6 +22,22 @@
     .carousel-control-next,
     .carousel-control-prev {
       z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item.active {
+        flex-flow: column nowrap;
+        background-color: rgba(44, 62, 80, 0.4);
+        > img {
+          margin: 0 auto;
+        }
+        > .carousel-caption {
+          flex-flow: column nowrap;
+          width: initial;
+          height: 100%;
+          left: 15%;
+        }
+      }
     }
   }
 }

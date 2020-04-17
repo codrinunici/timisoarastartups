@@ -1,9 +1,13 @@
 :host {
   ngb-carousel.hero-carousel::ng-deep {
-    .carousel-item {
+    .carousel-item.active {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
       height: calc(100vh - 50px);
       > .carousel-caption {
-        background: rgba(0, 0, 0, 0.4);
+        background-color: rgba(44, 62, 80, 0.4);
       }
     }
   }
