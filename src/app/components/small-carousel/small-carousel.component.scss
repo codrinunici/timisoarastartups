@@ -1,0 +1,26 @@
+:host {
+  ngb-carousel.small-carousel::ng-deep {
+    .carousel-item.active {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      > .carousel-caption {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        width: 100%;
+        left: 0;
+        > div {
+          max-width: 350px;
+          max-height: 200px;
+          background: rgba(0, 0, 0, 0.4);
+          cursor: pointer;
+        }
+      }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+      z-index: 10;
+    }
+  }
+}
