@@ -27,7 +27,7 @@
     @media (max-width: 768px) {
       .carousel-item.active {
         flex-flow: column nowrap;
-        background-color: rgba(44, 62, 80, 0.4);
+        background-color: rgba(44, 62, 80, 0.2);
         > img {
           margin: 0 auto;
         }
