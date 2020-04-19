@@ -1,9 +1,10 @@
 :host {
-  .jumbotron {
+  .jumbotron > h1,
+  .jumbotron > p {
     text-align: center;
-
-    .form-group.row {
-      justify-content: center;
-    }
+  }
+  .submit-btn {
+    display: block;
+    margin: 0 auto;
   }
 }
