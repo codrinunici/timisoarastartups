@@ -7,7 +7,7 @@
       align-items: center;
       height: calc(100vh - 50px);
       > img {
-        height: 100%;
+        object-fit: cover;
       }
       > .carousel-caption {
         background-color: rgba(44, 62, 80, 0.4);
