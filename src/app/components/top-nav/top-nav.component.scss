@@ -1,0 +1,10 @@
+:host {
+  a.navbar-brand:hover,
+  a.navbar-brand.active {
+    color: #18bc9c !important;
+  }
+
+  a {
+    cursor: pointer;
+  }
+}

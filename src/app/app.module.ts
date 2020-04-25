@@ -17,6 +17,10 @@ import { TestimonialsPanelComponent } from './components/testimonials-panel/test
 import { TextSloganPanelComponent } from './components/text-slogan-panel/text-slogan-panel.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { StartupInfoComponent } from './pages/startup-info/startup-info.component';
+import { PeopleComponent } from './pages/people/people.component';
+import { EventsComponent } from './pages/events/events.component';
+import { StartupsComponent } from './pages/startups/startups.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     GroupJoinPanelComponent,
     TextSloganPanelComponent,
     FooterComponent,
+    StartupInfoComponent,
+    PeopleComponent,
+    EventsComponent,
+    StartupsComponent,
   ],
   imports: [
     BrowserModule,
