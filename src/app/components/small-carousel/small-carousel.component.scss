@@ -7,16 +7,20 @@
       > .carousel-caption {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         left: 0;
         padding: 10px;
+        bottom: 30px;
         > div {
           max-width: 350px;
           max-height: 200px;
           background-color: rgba(44, 62, 80, 0.4);
           cursor: pointer;
+          > h3 {
+            padding: 5px;
+          }
         }
       }
     }
@@ -35,10 +39,10 @@
         }
         > .carousel-caption {
           flex-flow: column nowrap;
-          justify-content: space-around;
           width: initial;
           height: 100%;
           left: 15%;
+          bottom: 0;
         }
       }
     }
