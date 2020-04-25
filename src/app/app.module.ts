@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { GroupJoinPanelComponent } from './components/group-join-panel/group-join-panel.component';
 import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
 import { SmallCarouselComponent } from './components/small-carousel/small-carousel.component';
@@ -28,6 +29,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     TestimonialsPanelComponent,
     GroupJoinPanelComponent,
     TextSloganPanelComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
