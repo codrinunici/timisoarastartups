@@ -5,7 +5,7 @@
       Subscribe to our newsletter to stay in touch with latest whatever.
     </p>
     <hr class="my-4" />
-    <form>
+    <form [formGroup]="newsletterForm">
       <fieldset>
         <div class="form-group">
           <label for="inputFirstName">First name</label>
@@ -15,6 +15,7 @@
             id="inputFirstName"
             value="John"
             placeholder="Enter first name"
+            formControlName="firstName"
           />
         </div>
         <div class="form-group">
@@ -25,6 +26,7 @@
             id="inputLastName"
             value="Doe"
             placeholder="Enter last name"
+            formControlName="lastName"
           />
         </div>
         <div class="form-group">
@@ -35,12 +37,18 @@
             id="inputEmail"
             value="email@example.com"
             placeholder="Enter email"
+            formControlName="email"
           />
           <small id="emailHelp" class="form-text text-muted"
             >We'll never share your email with anyone else.
           </small>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg submit-btn">Submit</button>
+        <button
+          (click)="submitForm()"
+          class="btn btn-primary btn-lg submit-btn"
+        >
+          Submit
+        </button>
       </fieldset>
     </form>
   </div>
