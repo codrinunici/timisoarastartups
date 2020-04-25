@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/timisoarastartups",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
