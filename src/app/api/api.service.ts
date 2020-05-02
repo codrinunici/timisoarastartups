@@ -12,4 +12,12 @@ export class ApiService {
   newsletterSignup(data: any) {
     return from(this.afs.collection('newsletter').add(data));
   }
+
+  getStartups() {
+    return from(this.afs.collection('startups').get());
+  }
+
+  getPeople() {
+    return from(this.afs.collection('people').get());
+  }
 }
