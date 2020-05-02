@@ -3,9 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { from } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ApiService {
   constructor(private afs: AngularFirestore, private auth: AngularFireAuth) {}
 

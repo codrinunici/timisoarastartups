@@ -1,33 +1,43 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EventsComponent } from './pages/events/events.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { PeopleComponent } from './pages/people/people.component';
-import { StartupInfoComponent } from './pages/startup-info/startup-info.component';
-import { StartupsComponent } from './pages/startups/startups.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomepageComponent,
+    path: 'main',
+    loadChildren: () =>
+      import('./pages/homepage/homepage.module').then(
+        (md) => md.HomepageModule
+      ),
   },
   {
     path: 'startup-info',
-    component: StartupInfoComponent,
+    loadChildren: () =>
+      import('./pages/startup-info/startup-info.module').then(
+        (md) => md.StartupInfoModule
+      ),
   },
   {
     path: 'startups',
-    component: StartupsComponent,
+    loadChildren: () =>
+      import('./pages/startups/startups.module').then(
+        (md) => md.StartupsModule
+      ),
   },
   {
     path: 'people',
-    component: PeopleComponent,
+    loadChildren: () =>
+      import('./pages/people/people.module').then((md) => md.PeopleModule),
   },
   {
     path: 'events',
-    component: EventsComponent,
+    loadChildren: () =>
+      import('./pages/events/events.module').then((md) => md.EventsModule),
   },
-  { path: '**', component: HomepageComponent },
+  {
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

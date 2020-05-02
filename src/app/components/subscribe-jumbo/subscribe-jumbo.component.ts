@@ -8,6 +8,7 @@ import { ApiService } from '../../api/api.service';
   selector: 'app-subscribe-jumbo',
   templateUrl: './subscribe-jumbo.component.html',
   styleUrls: ['./subscribe-jumbo.component.scss'],
+  providers: [ApiService],
 })
 export class SubscribeJumboComponent implements OnInit, OnDestroy {
   newsletterForm: FormGroup;

@@ -9,6 +9,7 @@ import { ApiService } from '../../api/api.service';
   selector: 'app-startups',
   templateUrl: './startups.component.html',
   styleUrls: ['./startups.component.scss'],
+  providers: [ApiService],
 })
 export class StartupsComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean>;
