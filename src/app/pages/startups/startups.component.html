@@ -12,6 +12,16 @@
         <p class="card-text">{{ startup.description }}</p>
       </div>
       <div class="card-footer text-muted">
+        <div *ngIf="startup.angellist">
+          <a href="{{ startup.angellist }}" target="_blank">
+            <fa-icon [icon]="icon.angellist"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="startup.crunchbase">
+          <a href="{{ startup.crunchbase }}" target="_blank" class="crunchbase">
+            {{ icon.crunchbase }}
+          </a>
+        </div>
         <div *ngIf="startup.facebook">
           <a href="{{ startup.facebook }}" target="_blank">
             <fa-icon [icon]="icon.facebook"></fa-icon>

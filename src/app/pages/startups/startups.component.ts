@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { faAppStoreIos, faFacebookSquare, faGooglePlay, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faAngellist, faAppStoreIos, faFacebookSquare, faGooglePlay, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare, faLink } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
@@ -14,6 +14,8 @@ export class StartupsComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean>;
   startups = [];
   icon = {
+    angellist: faAngellist,
+    crunchbase: 'cb',
     facebook: faFacebookSquare,
     twitter: faTwitterSquare,
     linkedin: faLinkedin,
