@@ -16,11 +16,12 @@ import { SubscribeJumboComponent } from './components/subscribe-jumbo/subscribe-
 import { TestimonialsPanelComponent } from './components/testimonials-panel/testimonials-panel.component';
 import { TextSloganPanelComponent } from './components/text-slogan-panel/text-slogan-panel.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { StartupInfoComponent } from './pages/startup-info/startup-info.component';
-import { PeopleComponent } from './pages/people/people.component';
 import { EventsComponent } from './pages/events/events.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PeopleComponent } from './pages/people/people.component';
+import { StartupInfoComponent } from './pages/startup-info/startup-info.component';
 import { StartupsComponent } from './pages/startups/startups.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,10 @@ import { StartupsComponent } from './pages/startups/startups.component';
     NgbModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
