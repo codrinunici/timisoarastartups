@@ -1,15 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { faAppStoreIos, faFacebookSquare, faGooglePlay, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelopeSquare, faLink } from '@fortawesome/free-solid-svg-icons';
+import { Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
+import { ApiService } from '../../api/api.service';
 
 @Component({
   selector: 'app-startups',
   templateUrl: './startups.component.html',
-  styleUrls: ['./startups.component.scss']
+  styleUrls: ['./startups.component.scss'],
 })
-export class StartupsComponent implements OnInit {
-
-  constructor() { }
+export class StartupsComponent implements OnInit, OnDestroy {
+  destroy$: Subject<boolean>;
+  startups = [];
+  icon = {
+    facebook: faFacebookSquare,
+    twitter: faTwitterSquare,
+    linkedin: faLinkedin,
+    website: faLink,
+    email: faEnvelopeSquare,
+    gplay: faGooglePlay,
+    appstore: faAppStoreIos,
+  };
+  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
+    this.destroy$ = new Subject();
+    this.api
+      .getStartups()
+      .pipe(
+        takeUntil(this.destroy$),
+        map((data) => data.docs.map((doc) => doc.data())),
+        map((docs) =>
+          docs.sort((a, b) =>
+            a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase())
+          )
+        )
+      )
+      .subscribe((data) => (this.startups = data));
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.unsubscribe();
+  }
 }

@@ -1,0 +1,26 @@
+:host {
+  .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    > .card {
+      width: 20em;
+      align-items: center;
+      > img {
+        width: 75%;
+      }
+      > .card-body {
+        width: 100%;
+      }
+      > .card-footer {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        > div:not(:last-child) {
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+}
