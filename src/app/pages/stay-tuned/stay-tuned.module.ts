@@ -10,6 +10,7 @@ import { StayTunedComponent } from './stay-tuned.component';
   imports: [
     CommonModule,
     StayTunedRoutingModule
-  ]
+  ],
+  exports: [StayTunedComponent]
 })
 export class StayTunedModule { }

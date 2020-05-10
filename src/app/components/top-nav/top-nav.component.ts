@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav',
@@ -8,24 +7,18 @@ import { Router } from '@angular/router';
 })
 export class TopNavComponent implements OnInit {
   menuItems = [
-    { name: 'Timisoara startups', path: '' },
+    { name: 'Timisoara startups', path: 'main' },
     { name: 'Informatii despre etapele unui startup', path: 'startup-info' },
     { name: 'Startupuri din Timisoara', path: 'startups' },
     { name: 'Oameni cheie', path: 'people' },
     { name: 'Evenimente', path: 'events' },
   ];
 
-  currentIndex = 0;
   showSmallScreen = false;
 
-  constructor(private router: Router) {}
+  constructor() { }
 
-  ngOnInit(): void {}
-
-  navigateTo(index): void {
-    this.currentIndex = index;
-    this.router.navigate([this.menuItems[index].path]);
-  }
+  ngOnInit(): void { }
 
   toggleShowSmallScreen() {
     this.showSmallScreen = !this.showSmallScreen;
