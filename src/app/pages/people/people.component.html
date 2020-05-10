@@ -1,1 +1,96 @@
-<p>people works!</p>
+<div class="container">
+  <div class="card-container">
+    <div
+      class="card mb-4 pt-1"
+      *ngFor="let person of people"
+    >
+      <div class="img-container">
+        <img
+          src="assets/people/{{ person.photo }}"
+          class="card-img"
+          alt="..."
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ person.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ person.status }}</h6>
+        <p class="card-text">{{ person.description }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <div *ngIf="person.angellist">
+          <a
+            href="{{ person.angellist }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.angellist"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.crunchbase">
+          <a
+            href="{{ person.crunchbase }}"
+            target="_blank"
+            class="crunchbase"
+          >
+            {{ icon.crunchbase }}
+          </a>
+        </div>
+        <div *ngIf="person.facebook">
+          <a
+            href="{{ person.facebook }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.facebook"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.twitter">
+          <a
+            href="{{ person.twitter }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.twitter"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.linkedin">
+          <a
+            href="{{ person.linkedin }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.linkedin"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.website">
+          <a
+            href="{{ person.website }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.website"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.email">
+          <a
+            href="{{ person.email }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.email"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.googleplay">
+          <a
+            href="{{ person.gplay }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.gplay"></fa-icon>
+          </a>
+        </div>
+        <div *ngIf="person.applestore">
+          <a
+            href="{{ person.appstore }}"
+            target="_blank"
+          >
+            <fa-icon [icon]="icon.appstore"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
