@@ -9,13 +9,13 @@ const routes: Routes = [
         (md) => md.HomepageModule
       ),
   },
-  {
-    path: 'startup-info',
-    loadChildren: () =>
-      import('./pages/startup-info/startup-info.module').then(
-        (md) => md.StartupInfoModule
-      ),
-  },
+  // {
+  //   path: 'startup-info',
+  //   loadChildren: () =>
+  //     import('./pages/startup-info/startup-info.module').then(
+  //       (md) => md.StartupInfoModule
+  //     ),
+  // },
   {
     path: 'startups',
     loadChildren: () =>
@@ -28,20 +28,25 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/people/people.module').then((md) => md.PeopleModule),
   },
-  {
-    path: 'events',
-    loadChildren: () =>
-      import('./pages/events/events.module').then((md) => md.EventsModule),
-  },
+  // {
+  //   path: 'events',
+  //   loadChildren: () =>
+  //     import('./pages/events/events.module').then((md) => md.EventsModule),
+  // },
   {
     path: '',
     redirectTo: 'main',
     pathMatch: 'full',
   },
+  {
+    path: '404', loadChildren: () =>
+      import('./pages/stay-tuned/stay-tuned.module').then(md => md.StayTunedModule)
+  },
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
