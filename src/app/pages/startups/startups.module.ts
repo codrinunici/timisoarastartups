@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { ComponentsModule } from '../../components/components.module';
+
 import { StartupsRoutingModule } from './startups-routing.module';
 import { StartupsComponent } from './startups.component';
 
@@ -14,4 +16,4 @@ import { StartupsComponent } from './startups.component';
     FontAwesomeModule,
   ],
 })
-export class StartupsModule {}
+export class StartupsModule { }

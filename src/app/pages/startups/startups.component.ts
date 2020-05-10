@@ -1,8 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { faAngellist, faAppStoreIos, faFacebookSquare, faGooglePlay, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import {
+  faAngellist,
+  faAppStoreIos,
+  faFacebookSquare,
+  faGooglePlay,
+  faLinkedin,
+  faTwitterSquare
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare, faLink } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+
 import { ApiService } from '../../api/api.service';
 
 @Component({
@@ -25,7 +33,7 @@ export class StartupsComponent implements OnInit, OnDestroy {
     gplay: faGooglePlay,
     appstore: faAppStoreIos,
   };
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     this.destroy$ = new Subject();

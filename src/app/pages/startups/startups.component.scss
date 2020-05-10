@@ -3,23 +3,36 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    > .card {
+
+    >.card {
       width: 20em;
       align-items: center;
-      > img {
+
+      >.img-container {
         width: 75%;
+        justify-content: center;
+        display: flex;
+        height: 50%;
+
+        >img {
+          object-fit: cover;
+        }
       }
-      > .card-body {
+
+      >.card-body {
         width: 100%;
       }
-      > .card-footer {
+
+      >.card-footer {
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
-        > div:not(:last-child) {
+
+        >div:not(:last-child) {
           margin-right: 1em;
-          > .crunchbase {
+
+          >.crunchbase {
             font-weight: 900;
           }
         }

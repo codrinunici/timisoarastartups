@@ -1,11 +1,16 @@
 <div class="container">
   <div class="card-container">
-    <div class="card mb-4 pt-1" *ngFor="let startup of startups">
-      <img
-        src="assets/startups/{{ startup.logo }}"
-        class="card-img-top"
-        alt="..."
-      />
+    <div
+      class="card mb-4 pt-1"
+      *ngFor="let startup of startups"
+    >
+      <div class="img-container">
+        <img
+          src="assets/startups/{{ startup.logo }}"
+          class="card-img-top"
+          alt="..."
+        />
+      </div>
       <div class="card-body">
         <h5 class="card-title">{{ startup.name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ startup.status }}</h6>
@@ -13,47 +18,75 @@
       </div>
       <div class="card-footer text-muted">
         <div *ngIf="startup.angellist">
-          <a href="{{ startup.angellist }}" target="_blank">
+          <a
+            href="{{ startup.angellist }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.angellist"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.crunchbase">
-          <a href="{{ startup.crunchbase }}" target="_blank" class="crunchbase">
+          <a
+            href="{{ startup.crunchbase }}"
+            target="_blank"
+            class="crunchbase"
+          >
             {{ icon.crunchbase }}
           </a>
         </div>
         <div *ngIf="startup.facebook">
-          <a href="{{ startup.facebook }}" target="_blank">
+          <a
+            href="{{ startup.facebook }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.facebook"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.twitter">
-          <a href="{{ startup.twitter }}" target="_blank">
+          <a
+            href="{{ startup.twitter }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.twitter"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.linkedin">
-          <a href="{{ startup.linkedin }}" target="_blank">
+          <a
+            href="{{ startup.linkedin }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.linkedin"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.website">
-          <a href="{{ startup.website }}" target="_blank">
+          <a
+            href="{{ startup.website }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.website"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.email">
-          <a href="{{ startup.email }}" target="_blank">
+          <a
+            href="{{ startup.email }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.email"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.googleplay">
-          <a href="{{ startup.gplay }}" target="_blank">
+          <a
+            href="{{ startup.gplay }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.gplay"></fa-icon>
           </a>
         </div>
         <div *ngIf="startup.applestore">
-          <a href="{{ startup.appstore }}" target="_blank">
+          <a
+            href="{{ startup.appstore }}"
+            target="_blank"
+          >
             <fa-icon [icon]="icon.appstore"></fa-icon>
           </a>
         </div>
