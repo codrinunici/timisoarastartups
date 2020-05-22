@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { ArticleComponent } from './article/article.component';
 import { GroupJoinPanelComponent } from './group-join-panel/group-join-panel.component';
@@ -25,6 +26,7 @@ import { TextSloganPanelComponent } from './text-slogan-panel/text-slogan-panel.
     CommonModule,
     NgbModule,
     ReactiveFormsModule,
+    MarkdownModule.forChild()
   ],
   exports: [
     GroupJoinPanelComponent,
