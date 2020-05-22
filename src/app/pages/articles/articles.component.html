@@ -1,9 +1,13 @@
 <div class="container">
-  <div *ngFor="let article of articles">
-    <h3>
-      <a [routerLink]="['./', article.uid]">
-        {{article.title}}
-      </a>
-    </h3>
+  <div class="list-group">
+    <a
+      class="list-group-item list-group-item-action"
+      *ngFor="let article of articles; let i=index"
+      [routerLink]="['./', article.uid]"
+    >
+      <h3>
+        {{i+1}}. {{article.title}}
+      </h3>
+    </a>
   </div>
 </div>

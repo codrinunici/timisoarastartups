@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 
+import { Article } from '../../components/article/article.component';
+
 import { ApiService } from './../../api/api.service';
 
 @Component({
@@ -32,10 +34,4 @@ export class ArticlesComponent implements OnInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 
-}
-
-export interface Article {
-  uid: string,
-  title: string,
-  content: string
 }
