@@ -22,4 +22,8 @@ export class ApiService {
   getArticles() {
     return from(this.afs.collection('articles').get());
   }
+
+  getArticle(uid: string) {
+    return from(this.afs.doc(`articles/${uid}`).get());
+  }
 }
