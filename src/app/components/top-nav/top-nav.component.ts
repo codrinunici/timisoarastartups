@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class TopNavComponent implements OnInit {
   menuItems = [
     { name: 'Timisoara startups', path: 'main' },
-    { name: 'Informatii despre etapele unui startup', path: 'startup-info' },
-    { name: 'Startupuri din Timisoara', path: 'startups' },
-    { name: 'Oameni cheie', path: 'people' },
-    { name: 'Evenimente', path: 'events' },
+    { name: 'Startup Stages Guidelines', path: 'startup-info' },
+    { name: 'Startups in Timisoara', path: 'startups' },
+    { name: 'Key Persons', path: 'people' },
+    { name: 'Events', path: 'events' },
   ];
 
   showSmallScreen = false;
