@@ -12,6 +12,7 @@ export class TopNavComponent implements OnInit {
     { name: 'Startups in Timisoara', path: 'startups' },
     { name: 'Key Persons', path: 'people' },
     { name: 'Events', path: 'events' },
+    { name: 'Articles', path: 'articles' }
   ];
 
   showSmallScreen = false;

@@ -34,6 +34,10 @@ const routes: Routes = [
       import('./pages/events/events.module').then((md) => md.EventsModule),
   },
   {
+    path: 'articles',
+    loadChildren: () => import('./pages/articles/articles.module').then((md) => md.ArticlesModule)
+  },
+  {
     path: '',
     redirectTo: 'main',
     pathMatch: 'full',

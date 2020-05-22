@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 
 @Injectable()
 export class ApiService {
-  constructor(private afs: AngularFirestore, private auth: AngularFireAuth) {}
+  constructor(private afs: AngularFirestore, private auth: AngularFireAuth) { }
 
   newsletterSignup(data: any) {
     return from(this.afs.collection('newsletter').add(data));
@@ -17,5 +17,9 @@ export class ApiService {
 
   getPeople() {
     return from(this.afs.collection('people').get());
+  }
+
+  getArticles() {
+    return from(this.afs.collection('articles').get());
   }
 }
