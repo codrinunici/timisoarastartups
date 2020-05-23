@@ -2,5 +2,9 @@
   .container {
     height: calc(100vh - 140px);
     margin-top: 80px;
+
+    .list-group-item>h3 {
+      color: black;
+    }
   }
 }
