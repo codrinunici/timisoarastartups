@@ -35,5 +35,6 @@ export class ArticleComponent implements OnInit, OnDestroy {
 export interface Article {
   uid: string,
   title: string,
+  subtitle: string,
   content: string
 }
