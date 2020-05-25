@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
+
 const routes: Routes = [
   {
     path: 'main',
@@ -36,6 +38,10 @@ const routes: Routes = [
   {
     path: 'articles',
     loadChildren: () => import('./pages/articles/articles.module').then((md) => md.ArticlesModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then(md => md.AdminModule)
   },
   {
     path: '',

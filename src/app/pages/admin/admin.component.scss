@@ -1,0 +1,10 @@
+:host {
+  >.container {
+    margin-top: 80px;
+    height: calc(100vh - 150px);
+
+    >h4 {
+      text-align: center;
+    }
+  }
+}
