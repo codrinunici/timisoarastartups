@@ -11,13 +11,13 @@ import { faEnvelopeSquare, faLink } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 
-import { ApiService } from '../../api/api.service';
+import { StartupsService } from './../../api/startups/startups.service';
+
 
 @Component({
   selector: 'app-startups',
   templateUrl: './startups.component.html',
   styleUrls: ['./startups.component.scss'],
-  providers: [ApiService],
 })
 export class StartupsComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean>;
@@ -33,15 +33,14 @@ export class StartupsComponent implements OnInit, OnDestroy {
     gplay: faGooglePlay,
     appstore: faAppStoreIos,
   };
-  constructor(private api: ApiService) { }
+  constructor(private startupsService: StartupsService) { }
 
   ngOnInit(): void {
     this.destroy$ = new Subject();
-    this.api
+    this.startupsService
       .getStartups()
       .pipe(
         takeUntil(this.destroy$),
-        map((data) => data.docs.map((doc) => doc.data())),
         map((docs) =>
           docs.sort((a, b) =>
             a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase())

@@ -13,10 +13,6 @@ export class ApiService {
     return from(this.afs.collection('newsletter').add(data));
   }
 
-  getStartups() {
-    return from(this.afs.collection('startups').get());
-  }
-
   getPeople() {
     return from(this.afs.collection('people').get());
   }
