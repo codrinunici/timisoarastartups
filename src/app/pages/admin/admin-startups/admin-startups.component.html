@@ -1,1 +1,71 @@
-<p>admin-startups works!</p>
+<div
+  class="container"
+  [formGroup]="startupForms"
+>
+  <div
+    *ngFor="let startup of startups; let i=index"
+    formArrayName="startups"
+  >
+    <form [formGroupName]="i">
+      <fieldset>
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="'name-'{{i}}"
+          >Name</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="'name-'{{i}}"
+              formControlName="name"
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="'filters-'{{i}}"
+          >Filters</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="'filters-'{{i}}"
+              formControlName="filters"
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="'status-'{{i}}"
+          >Status</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="'status-'{{i}}"
+              formControlName="status"
+            >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="'description-'{{i}}"
+          >Description</label>
+          <div class="col-sm-10">
+            <textarea
+              type="text"
+              class="form-control"
+              id="'description-'{{i}}"
+              formControlName="description"
+            >
+            </textarea>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
