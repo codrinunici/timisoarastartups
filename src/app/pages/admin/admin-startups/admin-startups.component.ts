@@ -43,8 +43,9 @@ export class AdminStartupsComponent implements OnInit, OnDestroy {
     this.startups = [...startups];
     this.initialStartups = [...startups];
     this.startups.forEach(startup => {
-      startupFormArray.push(startup.buildReactiveFormGroup())
+      startupFormArray.push(startup.buildReactiveFormGroup());
     });
+    startupFormArray.disable();
   }
 
   ngOnDestroy() {
