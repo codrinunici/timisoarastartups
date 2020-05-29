@@ -19,7 +19,12 @@ export class StartupsService {
     return this.afs.collection('startups')
       .get()
       .pipe(
-        map(data => data.docs.map(this.constructStartup))
+        map(data => data.docs
+          .map(this.constructStartup)
+          .sort((a, b) =>
+            a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase())
+          )
+        )
       );
   }
 
