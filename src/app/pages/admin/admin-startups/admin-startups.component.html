@@ -3,6 +3,7 @@
   [formGroup]="startupForms"
 >
   <div
+    class="form-container"
     *ngFor="let startup of startups; let i=index"
     formArrayName="startups"
   >
@@ -235,5 +236,38 @@
         </div>
       </fieldset>
     </form>
+    <div class="container">
+      <div class="row justify-content-end">
+        <div
+          class="btn-group"
+          role="group"
+        >
+          <button
+            type="button"
+            class="btn btn-info"
+            *ngIf="!isEnabled(i)"
+            (click)="enableEditing(i)"
+          >Edit</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            *ngIf="isEnabled(i)"
+            (click)="save(i)"
+          >Save</button>
+          <button
+            type="button"
+            class="btn btn-warning"
+            *ngIf="isEnabled(i)"
+            (click)="disableEditing(i)"
+          >Cancel</button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="remove(i)"
+          >Delete</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

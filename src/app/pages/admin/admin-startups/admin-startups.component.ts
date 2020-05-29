@@ -38,14 +38,37 @@ export class AdminStartupsComponent implements OnInit, OnDestroy {
       .subscribe((startups: Startup[]) => this.initializeStartups(startups));
   }
 
+  save(i: number) {
+    console.log(this.startupFormArray.controls[i].value);
+  }
+
+  remove(i: number) {
+    console.log(this.startupFormArray.controls[i].value);
+  }
+
+  enableEditing(i: number) {
+    this.startupFormArray.controls[i].enable();
+  }
+
+  disableEditing(i: number) {
+    this.startupFormArray.controls[i].disable();
+  }
+
+  isEnabled(i: number) {
+    return this.startupFormArray.controls[i].enabled;
+  }
+
+  private get startupFormArray() {
+    return this.startupForms.get('startups') as FormArray;
+  }
+
   private initializeStartups(startups: Startup[]) {
-    const startupFormArray = this.startupForms.get('startups') as FormArray;
     this.startups = [...startups];
     this.initialStartups = [...startups];
     this.startups.forEach(startup => {
-      startupFormArray.push(startup.buildReactiveFormGroup());
+      this.startupFormArray.push(startup.buildReactiveFormGroup());
     });
-    startupFormArray.disable();
+    this.startupFormArray.disable();
   }
 
   ngOnDestroy() {
