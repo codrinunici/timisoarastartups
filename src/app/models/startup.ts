@@ -19,7 +19,7 @@ export default class Startup {
   lastUpdated: string;
   lastActivity: string;
 
-  constructor(input) {
+  constructor(input?: any) {
     this.uid = input && input.uid ? input.uid : '';
     this.name = input && input.name ? input.name : '';
     this.filters = input && input.filters ? input.filters : '';
@@ -35,8 +35,10 @@ export default class Startup {
     this.website = input && input.website ? input.website : '';
     this.email = input && input.email ? input.email : '';
     this.people = input && input.people ? this.processPeople(input.people) : '';
-    this.lastUpdated = input && input.last_updated ? input.last_updated : '';
-    this.lastActivity = input && input.last_activity ? input.last_activity : '';
+    this.lastUpdated = input && input.last_updated || input.lastUpdated ?
+      this.processDate(input.last_updated, input.lastUpdated) : '';
+    this.lastActivity = input && input.last_activity || input.lastActivity ?
+      this.processDate(input.last_activity, input.lastActivity) : '';
   }
 
   getStripped() {
@@ -64,6 +66,7 @@ export default class Startup {
     const fb = new FormBuilder();
 
     return fb.group({
+      uid: this.uid,
       name: this.name,
       filters: this.filters,
       status: this.status,
@@ -89,5 +92,15 @@ export default class Startup {
     } else if (typeof people === 'string') {
       return people;
     }
+    return '';
+  }
+
+  private processDate(underscoreDate: string, camelcaseDate: string): string {
+    if (underscoreDate && underscoreDate.length) {
+      return underscoreDate;
+    } else if (camelcaseDate && camelcaseDate.length) {
+      return camelcaseDate;
+    }
+    return '';
   }
 }
