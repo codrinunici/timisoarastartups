@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     ).pipe(
       takeUntil(this.destroy$)
     ).subscribe(
-      () => this.router.navigate(['./panel']),
+      () => this.router.navigate(['./admin', 'panel']),
       (err) => {
         console.log(err.message);
         this.loginError = err.message;
