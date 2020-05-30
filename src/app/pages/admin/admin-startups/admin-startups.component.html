@@ -197,14 +197,14 @@
             class="col-sm-2 col-form-label"
             for="'people-'{{i}}"
           >People</label>
-          <!-- <div class="col-sm-10">
+          <div class="col-sm-10">
             <input
               type="text"
               class="form-control"
               id="'tags-'{{i}}"
-              formControlName="tags"
+              formControlName="people"
             >
-          </div> -->
+          </div>
         </div>
         <div class="form-group row">
           <label
@@ -236,38 +236,34 @@
         </div>
       </fieldset>
     </form>
-    <div class="container">
-      <div class="row justify-content-end">
-        <div
-          class="btn-group"
-          role="group"
-        >
-          <button
-            type="button"
-            class="btn btn-info"
-            *ngIf="!isEnabled(i)"
-            (click)="enableEditing(i)"
-          >Edit</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            *ngIf="isEnabled(i)"
-            (click)="save(i)"
-          >Save</button>
-          <button
-            type="button"
-            class="btn btn-warning"
-            *ngIf="isEnabled(i)"
-            (click)="disableEditing(i)"
-          >Cancel</button>
-          <button
-            type="button"
-            class="btn btn-danger"
-            (click)="remove(i)"
-          >Delete</button>
-        </div>
+    <div class="row">
+      <div class="col-3 delete-column">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="remove(i)"
+        >Delete</button>
+      </div>
+      <div class="col-9 edit-column">
+        <button
+          type="button"
+          class="btn btn-info"
+          *ngIf="!isEnabled(i)"
+          (click)="enableEditing(i)"
+        >Edit</button>
+        <button
+          type="button"
+          class="btn btn-success"
+          *ngIf="isEnabled(i)"
+          (click)="save(i)"
+        >Save</button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          *ngIf="isEnabled(i)"
+          (click)="disableEditing(i)"
+        >Cancel</button>
       </div>
     </div>
-
   </div>
 </div>

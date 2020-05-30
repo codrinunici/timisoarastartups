@@ -15,7 +15,7 @@ export default class Startup {
   linkedin: string;
   website: string;
   email: string;
-  people: string[];
+  people: string;
   lastUpdated: string;
   lastActivity: string;
 
@@ -34,7 +34,7 @@ export default class Startup {
     this.linkedin = input && input.linkedin ? input.linkedin : '';
     this.website = input && input.website ? input.website : '';
     this.email = input && input.email ? input.email : '';
-    this.people = input && input.people ? input.people : [];
+    this.people = input && input.people ? this.processPeople(input.people) : '';
     this.lastUpdated = input && input.last_updated ? input.last_updated : '';
     this.lastActivity = input && input.last_activity ? input.last_activity : '';
   }
@@ -77,9 +77,17 @@ export default class Startup {
       linkedin: this.linkedin,
       website: this.website,
       email: this.email,
-      people: fb.array(this.people),
+      people: this.people,
       lastUpdated: this.lastUpdated,
       lastActivity: this.lastActivity,
     })
+  }
+
+  private processPeople(people: string | string[]) {
+    if (typeof people === 'object') {
+      return people.join(', ');
+    } else if (typeof people === 'string') {
+      return people;
+    }
   }
 }
