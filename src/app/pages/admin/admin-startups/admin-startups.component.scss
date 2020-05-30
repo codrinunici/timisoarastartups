@@ -1,19 +1,5 @@
 :host {
-  .form-container {
-    border: 1px solid #ced4da;
-    margin-bottom: 20px;
-    padding: 20px;
-
-    .delete-column {
-      display: flex;
-      justify-content: flex-start;
-    }
-    .edit-column {
-      display: flex;
-      justify-content: flex-end;
-      > .btn-success {
-        margin-right: 10px;
-      }
-    }
+  .add-column {
+    margin-bottom: 10px;
   }
 }

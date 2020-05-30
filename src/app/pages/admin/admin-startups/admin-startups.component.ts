@@ -15,19 +15,12 @@ import { StartupsService } from './../../../api/startups/startups.service';
 export class AdminStartupsComponent implements OnInit, OnDestroy {
   private destroy$: Subject<boolean>;
 
-  initialStartups: Startup[];
   startups: Startup[];
-  startupForms: FormGroup;
 
   constructor(
     private startupsService: StartupsService,
-    private fb: FormBuilder
   ) {
-    this.initialStartups = [];
     this.startups = [];
-    this.startupForms = this.fb.group({
-      startups: this.fb.array([])
-    });
   }
 
   ngOnInit(): void {
@@ -35,40 +28,27 @@ export class AdminStartupsComponent implements OnInit, OnDestroy {
 
     this.startupsService.getStartups()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((startups: Startup[]) => this.initializeStartups(startups));
+      .subscribe((startups: Startup[]) => this.startups = startups);
   }
 
-  save(i: number) {
-    console.log(this.startupFormArray.controls[i].value);
+  add() {
+    const newStartup = new Startup();
   }
 
-  remove(i: number) {
-    console.log(this.startupFormArray.controls[i].value);
+  onStartupEdited(editedStartup: Startup) {
+    this.startups = this.startups
+      .reduce(
+        (acc: Startup[], val: Startup) => acc.concat(val.uid === editedStartup.uid ? editedStartup : val),
+        []
+      );
   }
 
-  enableEditing(i: number) {
-    this.startupFormArray.controls[i].enable();
-  }
-
-  disableEditing(i: number) {
-    this.startupFormArray.controls[i].disable();
-  }
-
-  isEnabled(i: number) {
-    return this.startupFormArray.controls[i].enabled;
-  }
-
-  private get startupFormArray() {
-    return this.startupForms.get('startups') as FormArray;
-  }
-
-  private initializeStartups(startups: Startup[]) {
-    this.startups = [...startups];
-    this.initialStartups = [...startups];
-    this.startups.forEach(startup => {
-      this.startupFormArray.push(startup.buildReactiveFormGroup());
-    });
-    this.startupFormArray.disable();
+  onStartupDeleted(deletedStartup: Startup) {
+    this.startups = this.startups
+      .reduce(
+        (acc: Startup[], val: Startup) => val.uid === deletedStartup.uid ? acc : acc.concat(val),
+        []
+      );
   }
 
   ngOnDestroy() {

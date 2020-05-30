@@ -1,0 +1,261 @@
+<div class="form-container">
+
+  <form [formGroup]="startupForm">
+    <fieldset>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'name-'{{startupData.uid}}"
+        >Name</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'name-'{{startupData.uid}}"
+            formControlName="name"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'filters-'{{startupData.uid}}"
+        >Filters</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'filters-'{{startupData.uid}}"
+            formControlName="filters"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'status-'{{startupData.uid}}"
+        >Status</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'status-'{{startupData.uid}}"
+            formControlName="status"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'description-'{{startupData.uid}}"
+        >Description</label>
+        <div class="col-sm-10">
+          <textarea
+            type="text"
+            class="form-control"
+            id="'description-'{{startupData.uid}}"
+            formControlName="description"
+          >
+      </textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'tags-'{{startupData.uid}}"
+        >Tags</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'tags-'{{startupData.uid}}"
+            formControlName="tags"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'logo-'{{startupData.uid}}"
+        >Logo</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'logo-'{{startupData.uid}}"
+            formControlName="logo"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'angellist-'{{startupData.uid}}"
+        >Angellist</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'angellist-'{{startupData.uid}}"
+            formControlName="angellist"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'crunchbase-'{{startupData.uid}}"
+        >Crunchbase</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'crunchbase-'{{startupData.uid}}"
+            formControlName="crunchbase"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'facebook-'{{startupData.uid}}"
+        >Facebook</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'facebook-'{{startupData.uid}}"
+            formControlName="facebook"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'twitter-'{{startupData.uid}}"
+        >Twitter</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'twitter-'{{startupData.uid}}"
+            formControlName="twitter"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'linkedin-'{{startupData.uid}}"
+        >Linkedin</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'linkedin-'{{startupData.uid}}"
+            formControlName="linkedin"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'website-'{{startupData.uid}}"
+        >Website</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'website-'{{startupData.uid}}"
+            formControlName="website"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'email-'{{startupData.uid}}"
+        >Email</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'email-'{{startupData.uid}}"
+            formControlName="email"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'people-'{{startupData.uid}}"
+        >People</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'tags-'{{startupData.uid}}"
+            formControlName="people"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'lastUpdated-'{{startupData.uid}}"
+        >Last Updated</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'lastUpdated-'{{startupData.uid}}"
+            formControlName="lastUpdated"
+          >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          class="col-sm-2 col-form-label"
+          for="'lastActivity-'{{startupData.uid}}"
+        >Last Activity</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="'lastActivity-'{{startupData.uid}}"
+            formControlName="lastActivity"
+          >
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <div class="row">
+    <div class="col-3 delete-column">
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="remove()"
+      >Delete</button>
+    </div>
+    <div class="col-9 edit-column">
+      <button
+        type="button"
+        class="btn btn-info"
+        *ngIf="!isEnabled()"
+        (click)="enableEditing()"
+      >Edit</button>
+      <button
+        type="button"
+        class="btn btn-success"
+        *ngIf="isEnabled()"
+        (click)="save()"
+      >Save</button>
+      <button
+        type="button"
+        class="btn btn-warning"
+        *ngIf="isEnabled()"
+        (click)="disableEditing()"
+      >Cancel</button>
+    </div>
+  </div>
+</div>
