@@ -76,6 +76,7 @@ export class AdminStartupFormComponent implements OnInit, OnDestroy {
 
   disableEditing() {
     this.startupForm.disable();
+    this.setupForm(this.startupData);
   }
 
   isEnabled() {
