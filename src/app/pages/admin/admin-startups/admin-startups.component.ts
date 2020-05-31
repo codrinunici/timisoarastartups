@@ -1,16 +1,19 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import Startup from '../../../models/startup';
 
+import { AdminAddStartupComponent } from './admin-add-startup/admin-add-startup.component';
 import { StartupsService } from './../../../api/startups/startups.service';
 
 @Component({
   selector: 'app-admin-startups',
   templateUrl: './admin-startups.component.html',
-  styleUrls: ['./admin-startups.component.scss']
+  styleUrls: ['./admin-startups.component.scss'],
+  providers: [NgbModal]
 })
 export class AdminStartupsComponent implements OnInit, OnDestroy {
   private destroy$: Subject<boolean>;
@@ -19,6 +22,7 @@ export class AdminStartupsComponent implements OnInit, OnDestroy {
 
   constructor(
     private startupsService: StartupsService,
+    private modalService: NgbModal
   ) {
     this.startups = [];
   }
@@ -32,7 +36,24 @@ export class AdminStartupsComponent implements OnInit, OnDestroy {
   }
 
   add() {
-    const newStartup = new Startup();
+    const modalRef = this.modalService.open(AdminAddStartupComponent, { size: 'lg' });
+
+    modalRef.result
+      .then(newStartup => {
+        if (newStartup) {
+          this.onStartupAdded(newStartup);
+        }
+        return;
+      })
+      .catch(() => { });
+  }
+
+  onStartupAdded(newStartup: Startup) {
+    this.startups = this.startups
+      .concat(newStartup)
+      .sort((a, b) =>
+        a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase())
+      );
   }
 
   onStartupEdited(editedStartup: Startup) {

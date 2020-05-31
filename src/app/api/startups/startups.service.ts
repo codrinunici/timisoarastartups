@@ -20,7 +20,7 @@ export class StartupsService {
       .get()
       .pipe(
         map(data => data.docs
-          .map(this.constructStartup)
+          .map(doc => new Startup({ uid: doc.id, ...doc.data() }))
           .sort((a, b) =>
             a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase())
           )
@@ -32,7 +32,7 @@ export class StartupsService {
     return from(
       this.afs.collection('startups')
         .add(startup.getStripped())
-        .then(this.constructStartup)
+        .then(newStartup => new Startup({ ...startup, uid: newStartup.id }))
     );
   }
 
@@ -50,9 +50,5 @@ export class StartupsService {
         .delete()
         .then(() => startup)
     );
-  }
-
-  private constructStartup(doc: firebase.firestore.DocumentData): Startup {
-    return new Startup({ uid: doc.id, ...doc.data() });
   }
 }

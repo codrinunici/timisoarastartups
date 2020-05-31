@@ -35,9 +35,9 @@ export default class Startup {
     this.website = input && input.website ? input.website : '';
     this.email = input && input.email ? input.email : '';
     this.people = input && input.people ? this.processPeople(input.people) : '';
-    this.lastUpdated = input && input.last_updated || input.lastUpdated ?
+    this.lastUpdated = input && (input.last_updated || input.lastUpdated) ?
       this.processDate(input.last_updated, input.lastUpdated) : '';
-    this.lastActivity = input && input.last_activity || input.lastActivity ?
+    this.lastActivity = input && (input.last_activity || input.lastActivity) ?
       this.processDate(input.last_activity, input.lastActivity) : '';
   }
 

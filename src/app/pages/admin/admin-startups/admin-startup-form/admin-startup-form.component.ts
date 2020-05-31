@@ -18,7 +18,9 @@ import { StartupsService } from './../../../../api/startups/startups.service';
 export class AdminStartupFormComponent implements OnInit, OnDestroy {
   private destroy$: Subject<boolean>;
   @Input() startupData: Startup;
+  @Input() isAdd = false;
   @Output() edited = new EventEmitter<Startup>();
+  @Output() added = new EventEmitter<Startup>();
   @Output() deleted = new EventEmitter<Startup>();
 
   startupForm: FormGroup;
@@ -40,15 +42,26 @@ export class AdminStartupFormComponent implements OnInit, OnDestroy {
   save() {
     const formValue = new Startup(this.startupForm.value);
 
-    this.startupsService.editStartup(formValue)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(savedStartup => {
-        this.setupForm(savedStartup);
-        this.edited.emit(savedStartup);
-      });
+    if (this.isAdd) {
+      return this.startupsService.addStartup(formValue)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(addedStartup => {
+          this.added.emit(addedStartup);
+        });
+    } else {
+      return this.startupsService.editStartup(formValue)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(savedStartup => {
+          this.setupForm(savedStartup);
+          this.edited.emit(savedStartup);
+        });
+    }
   }
 
   remove() {
+    if (this.isAdd) {
+      return;
+    }
     const formValue = new Startup(this.startupForm.value);
 
     const modalRef = this.modalService.open(ModalConfirmationComponent);
@@ -71,10 +84,16 @@ export class AdminStartupFormComponent implements OnInit, OnDestroy {
   }
 
   enableEditing() {
+    if (this.isAdd) {
+      return;
+    }
     this.startupForm.enable();
   }
 
   disableEditing() {
+    if (this.isAdd) {
+      return;
+    }
     this.startupForm.disable();
     this.setupForm(this.startupData);
   }
@@ -90,6 +109,9 @@ export class AdminStartupFormComponent implements OnInit, OnDestroy {
 
   private setupForm(startup: Startup) {
     this.startupForm = startup.buildReactiveFormGroup();
+    if (this.isAdd) {
+      return;
+    }
     this.startupForm.disable();
   }
 

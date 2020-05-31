@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h5 class="modal-title">Add new startup</h5>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="closeClicked()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <app-admin-startup-form
+    [isAdd]="true"
+    [startupData]="startup"
+    (added)="onStartupAdded($event)"
+  ></app-admin-startup-form>
+</div>
