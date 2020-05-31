@@ -1,5 +1,8 @@
 :host {
   .container {
     margin-top: 80px;
+    markdown ::ng-deep h4 {
+      margin-top: 50px;
+    }
   }
 }
