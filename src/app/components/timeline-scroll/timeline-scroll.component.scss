@@ -1,0 +1,32 @@
+.container{
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  height:10vh;
+  border-radius: 30px;
+}
+.time{
+  color: teal;
+  font-weight: bold;
+}
+.info{
+  text-align: right;
+}
+
+.scroll_text::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll_text::-webkit-scrollbar-track {
+  background-color: #E7E7E7
+}
+.scroll_text::-webkit-scrollbar-thumb {
+  background-color: rgba(223, 86, 86, 0.69);
+  border: 1px solid rgba(92, 92, 92, 0.5);
+  border-radius: 10px;
+}
+.scroll_text::-webkit-scrollbar-thumb:hover {
+  background-color: #000;
+}
+.scroll_text:hover{
+
+}

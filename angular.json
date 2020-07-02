@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "timisoarastartups"
+  "defaultProject": "timisoarastartups",
+  "cli": {
+    "analytics": "4c726b00-4734-47cc-ba6d-1a0f550c96f1"
+  }
 }

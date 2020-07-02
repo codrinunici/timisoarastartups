@@ -1,0 +1,34 @@
+  .card-container {
+    display: flex;
+
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    .card {
+      display: flex;
+      border-radius: 25px;
+      width: 15%;
+      text-align: center;
+    }
+
+    .card-body {
+      text-align: left;
+    }
+
+    .card-title {
+      text-align: center;
+    }
+
+    .img-container {
+      display: flex;
+      width: 70%;
+      object-fit: cover;
+      margin: auto;
+    }
+
+    .card:hover {
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .2);
+      transition: 0.5s ease;
+    }
+  }
+

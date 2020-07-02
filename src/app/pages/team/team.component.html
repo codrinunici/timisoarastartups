@@ -1,0 +1,17 @@
+<div class="card-container">
+<div class="card" *ngFor="let member of team">
+    <div class="mx-2 p-5">
+      <div class="card-title">{{member.name}}</div>
+      <img
+        class="img-container"
+        src="assets/people/{{member.photo}}"
+      >
+      <div class="card-footer">
+      <a  href="{{member.facebook}}">
+        <fa-icon [icon]="icon.facebook"></fa-icon>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+

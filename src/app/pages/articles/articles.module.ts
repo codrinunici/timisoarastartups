@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
+import {ComponentsModule} from '../../components/components.module';
 
 import { ArticlesRoutingModule } from './articles-routing.module';
 import { ArticlesComponent } from './articles.component';
@@ -11,7 +12,8 @@ import { ArticlesComponent } from './articles.component';
   imports: [
     CommonModule,
     ArticlesRoutingModule,
-    MarkdownModule.forChild()
+    MarkdownModule.forChild(),
+    ComponentsModule
   ]
 })
 export class ArticlesModule { }

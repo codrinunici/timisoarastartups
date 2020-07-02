@@ -9,8 +9,10 @@ import { GroupJoinPanelComponent } from './group-join-panel/group-join-panel.com
 import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
 import { SmallCarouselComponent } from './small-carousel/small-carousel.component';
 import { SubscribeJumboComponent } from './subscribe-jumbo/subscribe-jumbo.component';
-import { TestimonialsPanelComponent } from './testimonials-panel/testimonials-panel.component';
 import { TextSloganPanelComponent } from './text-slogan-panel/text-slogan-panel.component';
+import { TestimonialPanelComponent } from './testimonial-panel/testimonial-panel.component';
+import { TimelineScrollComponent } from './timeline-scroll/timeline-scroll.component';
+import { HomeImagesComponent } from './home-images/home-images.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,11 @@ import { TextSloganPanelComponent } from './text-slogan-panel/text-slogan-panel.
     HeroCarouselComponent,
     SmallCarouselComponent,
     SubscribeJumboComponent,
-    TestimonialsPanelComponent,
     TextSloganPanelComponent,
     ArticleComponent,
+    TestimonialPanelComponent,
+    TimelineScrollComponent,
+    HomeImagesComponent,
   ],
   imports: [
     CommonModule,
@@ -33,9 +37,11 @@ import { TextSloganPanelComponent } from './text-slogan-panel/text-slogan-panel.
     HeroCarouselComponent,
     SmallCarouselComponent,
     SubscribeJumboComponent,
-    TestimonialsPanelComponent,
     TextSloganPanelComponent,
-    ArticleComponent
+    ArticleComponent,
+    TestimonialPanelComponent,
+    TimelineScrollComponent,
+    HomeImagesComponent
   ],
 })
 export class ComponentsModule { }
